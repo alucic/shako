@@ -1,0 +1,33 @@
+{
+  "name": "@alucic/shako",
+  "version": "1.0.0",
+  "description": "Simple file generator.",
+  "main": "src/shako.js",
+  "bin": {
+    "shako": "./bin/shako"
+  },
+  "scripts": {
+    "test": "tape tests/*_test.js"
+  },
+  "keywords": [
+    "file",
+    "generate",
+    "template",
+    "timestamp",
+    "prefix",
+    "suffix",
+    "postfix"
+  ],
+  "author": "Ante Lucic <ante.lucic450@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/alucic/shako",
+  "bugs": {
+    "url": "https://github.com/alucic/shako/issues"
+  },
+  "dependencies": {
+    "yargs": "^14.2.0"
+  },
+  "devDependencies": {
+    "tape": "^4.11.0"
+  }
+}

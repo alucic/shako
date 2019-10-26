@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+const path = require('path');
+const Shako = require('../src/shako');
+const yargs = require('yargs');
+
+const options = yargs
+  .usage('shako <filename>')
+  .option('t', { alias: 'timestamp', describe: 'Include timestamp in the filename', type: 'boolean', default: true })
+  .option('p', { alias: 'prefix', describe: 'Prefix filename', type: 'string', default: '' })
+  .option('s', { alias: 'suffix', describe: 'Suffix filename', type: 'string', default: '' })
+  .option('template', { describe: 'A template file', type: 'string', default: '' })
+  .demandCommand(1, 'Missing filename argument. Example: shako migrations/add-users-table')
+  .argv;
+
+const filename = path.resolve(...yargs.argv._);
+
+const shako = new Shako({
+  timestamp: options.timestamp,
+  prefix: options.prefix,
+  suffix: options.suffix,
+  template: options.template,
+});
+
+console.log('Created', shako.generate(filename));
+
