@@ -1,4 +1,5 @@
 ## Shako - simple file generator
+[![Build Status](https://travis-ci.org/alucic/shako.svg?branch=master)](https://travis-ci.org/alucic/shako)
 
 ## Installation
 ```
